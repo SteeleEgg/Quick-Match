@@ -26,28 +26,15 @@ export const ScoreIndicator = () => {
      * - Hint: The useEffect dependency array can have multiple dependencies.
      */
 
-    const [state] = useContext(AppContext)
-    const [score, setScore] = useState(0)
-
-    useEffect(() => {
-        let direction = 
-            score > state.score ? 
-            -1 :  score < state.score ? 1 
-            : 0
-
-        setTimeout(() => {
-            setScore(score + direction)
-        }, Math.max(0, 56 - Math.abs(score - state.score)))
-
-    }, [state.score, score])
+    
 
     return (
         <Container>
             <div>
-                Score: {score}
+                Score: {/** Score Here */}
             </div>
             <div>
-                Next Correct Guess: {state.settings.correctGuessMultiplier * (state.consecutiveCorrect + 1)}
+                Next Correct Guess: {/** Next Correct Guess Score Here */}
             </div>
         </Container>
     )

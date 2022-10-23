@@ -77,7 +77,11 @@ const CardFront = styled.div`
         background-color: var(--green-500);
     }
 `
-
+/**
+ * Card Component
+ * @prop {index} The order that the card should appear in in the grid.
+ * @prop {type} URL of image to be used on the front side of the card. 
+ */
 export const Card = ({ index, type }) => {
 
     const [state, setState] = useContext(AppContext)

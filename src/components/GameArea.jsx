@@ -44,6 +44,30 @@ const types = [
 
 export const GameArea = () => {
 
+    /**
+     * The GameArea component is for building the card array and handling the logic involved with 
+     * clicking and flipping cards. There's already a pre-built card component you can use.
+     * Check it for it's documentation.
+     * 
+     * Make sure you utilize memoization and the useCallback hook to make sure your functions are 
+     * working with state changes.
+     * 
+     * To Do:
+     *  - Pull state and setState from AppContext
+     *  - Memoize a shuffled version of the types array.
+     *  - Create a function that'll return a type.
+     *  - Create a memoized function that'll create the layout array.
+     *  - Create a function that'll run when there are two active guesses.
+     *      - It should change the state to prevent the user from doing more guesses until the check is complete.
+     *      - You'll need to compare the two card types of the guesses.
+     *      - If they match, handle it as a successful match.
+     *      - If not, handle an incorrect guess. 
+     *      Note: Check the rules for how to handle scoring.
+     *  - You'll need a promise to resolve asynchronously so that the card won't turn green or leave the screen until the user's got a chance to see it.
+     *  - Make use of useEffect to run your checks.
+     */
+
+
     const [state, setState] = useContext(AppContext)
 
     const shuffledTypes = useMemo(() => types.sort((a, b) => 0.5 - Math.random()), [])
@@ -107,7 +131,7 @@ export const GameArea = () => {
             }, 621)
         }
     })
-
+    
     useEffect(() => {
         let { guesses } = state;
         if (guesses.length == 2) {

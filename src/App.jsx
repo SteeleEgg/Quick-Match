@@ -60,7 +60,7 @@ const App = () => {
     mode: 'menu',
     highScore: 0,
     settings: {
-      rows: 3,
+      rows: 3, 
       cols: 6,
       correctGuessMultiplier: 10,
       canGuess: true,
